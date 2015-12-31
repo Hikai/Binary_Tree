@@ -1,62 +1,73 @@
 #include "Binary_Tree.h"
+//Node * root = nullptr, * tmpLeft = nullptr, * tmpRight = nullptr;
 
-Node * root = nullptr, * tmpLeft = nullptr, * tmpRight = nullptr;
-
-Node * createNode(int data)
+Node * Store::create_node(int data)
 {
-	Node * node = (Node *) malloc (sizeof (Node *));
+	Node * node = new Node;
 	node->data = data;
-	node->left = nullptr;
-	node->right = nullptr;
-	node->parent = nullptr;
-
+	node->node_left = nullptr;
+	node->node_right = nullptr;
+	node->node_parent = nullptr;
 	return node;
 }
 
-void addNode(Node * node)
+void Store::add_node(Node * node)
 {
-	if (root == nullptr) {
-		root = node;
-		tmpLeft->parent = root;
-		tmpRight->parent = root;
-		tmpLeft = root->left;
-		tmpRight = root->right;
+	if (node_root == nullptr) {
+		node_root = node;
+		node_tmp_left->node_parent = node_root;
+		node_tmp_right->node_parent = node_root;
+		node_tmp_left = node_root->node_left;
+		node_tmp_right = node_root->node_right;
 	}
-	else if (tmpLeft == nullptr) {
-		tmpLeft->parent = tmpLeft;
-		tmpLeft = node;
-		tmpLeft = tmpLeft->left;
+	else if (node_root->node_left == nullptr) {
+		node_tmp_left->node_parent = node_tmp_left;
+		node_tmp_left = node;
+		node_tmp_left = node_tmp_left->node_left;
 	}
-	else if (tmpRight == nullptr) {
-		tmpRight->parent = tmpRight;
-		tmpRight = node;
-		tmpRight = tmpRight->right;
+	else if (node_tmp_right == nullptr) {
+		node_tmp_right->node_parent = node_tmp_right;
+		node_tmp_right = node;
+		node_tmp_right = node_tmp_right->node_right;
 	}
 }
 
-Node * searchNode(int data)
+Node * Store::search_node(int data)
 {
-	Node * node = tmpLeft;
-
+	Node * node = node_tmp_left;
 	while (1) {
 		if (node->data == data) {
 			break;
 		}
-
-		node->parent = tmpLeft -> parent;
-
-		if (node->parent == nullptr) {
+		node->node_parent = node_tmp_left->node_parent;
+		if (node->node_parent == nullptr) {
 			while (1) {
-				node = node->right;
-
+				node = node->node_right;
 				if (node->data == data) {
 					break;
 				}
 			}
-			
 			break;
 		}
 	}
+}
 
-	return node;
+void Store::separate_node(Node * node)
+{
+	if (node->node_parent == nullptr) {
+		node->node_left = nullptr;
+		node->node_right = nullptr;
+	}
+	else {
+		node->node_left->node_parent = node->node_parent;
+		node->node_right->node_parent = node->node_parent;
+		node->node_left = nullptr;
+		node->node_right = nullptr;
+		destroy_node(node);
+	}
+}
+
+void Store::destroy_node(Node * node)
+{
+	delete node;
 }
