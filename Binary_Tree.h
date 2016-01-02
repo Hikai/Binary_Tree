@@ -23,12 +23,8 @@ public :
 
 class Store {
 public:
-	Node * node_root = nullptr;
-	Node * node_tmp_left = nullptr;
-	Node * node_tmp_right = nullptr;
 	Node * create_node(int);
-	void add_node(Node *);
-	Node * search_node(int);
+	//Node * search_node(int);
 	void separate_node(Node *);
 	void destroy_node(Node *);
 	Store()
