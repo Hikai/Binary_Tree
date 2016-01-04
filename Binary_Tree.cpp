@@ -10,9 +10,15 @@ Node * Store::create_node(int data)
 	return node;
 }
 
-//Node * Store::search_node(int data)
-//{
-//}
+void Store::inorder_traversal(Node * node_traversal)
+{
+	if (node_traversal == nullptr) {
+		return;
+	}
+	Store::inorder_traversal(node_traversal->node_left);
+	cout << node_traversal->data << ", ";
+	Store::inorder_traversal(node_traversal->node_right);
+}
 
 void Store::separate_node(Node * node)
 {
@@ -20,10 +26,5 @@ void Store::separate_node(Node * node)
 	node->node_left = nullptr;
 	node->node_right = nullptr;
 	node->node_parent = nullptr;
-	delete node;
-}
-
-void Store::destroy_node(Node * node)
-{
-	delete node;
+	Store::destroy_node(node);
 }

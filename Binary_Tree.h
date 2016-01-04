@@ -22,11 +22,15 @@ public :
 };
 
 class Store {
+private :
+	void destroy_node(Node * node)
+	{
+		delete node;
+	}
 public:
 	Node * create_node(int);
-	//Node * search_node(int);
+	void inorder_traversal(Node *);
 	void separate_node(Node *);
-	void destroy_node(Node *);
 	Store()
 	{
 

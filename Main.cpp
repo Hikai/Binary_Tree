@@ -22,8 +22,7 @@ int main()
 	node_e->node_parent = node_a;
 	node_f->node_parent = node_e;
 	node_g->node_parent = node_e;
-	cout << node_a->node_left->node_left->data << endl;
-	cout << node_a->node_right->node_left->data << endl;
+	store->inorder_traversal(node_a);
 	store->separate_node(node_g);
 	store->separate_node(node_f);
 	store->separate_node(node_e);
