@@ -6,8 +6,9 @@
 using namespace std;
 
 class Node {
-public :
+private :
 	int data;
+public :
 	Node * node_left;
 	Node * node_right;
 	Node * node_parent;
@@ -19,6 +20,8 @@ public :
 	{
 
 	}
+	int get_node();
+	void set_node(int);
 };
 
 class Store {
