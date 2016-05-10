@@ -8,10 +8,10 @@ using namespace std;
 class Node {
 private :
 	int data;
-public :
 	Node * node_left;
 	Node * node_right;
 	Node * node_parent;
+public :
 	Node()
 	{
 
@@ -21,7 +21,13 @@ public :
 
 	}
 	int get_node();
+	Node * get_node_left();
+	Node * get_node_right();
+	Node * get_node_parent();
 	void set_node(int);
+	void set_node_left(Node *);
+	void set_node_right(Node *);
+	void set_node_parent(Node *);
 };
 
 class Store {
