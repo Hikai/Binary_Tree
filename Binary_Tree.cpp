@@ -20,6 +20,26 @@ Node * Node::get_node_parent(void)
 	return node_parent;
 }
 
+void set_node_data(int data)
+{
+	this.data = data;
+}
+
+void set_node_left(Node * left)
+{
+	node_left = left;
+}
+
+void set_node_right(Node * right)
+{
+	node_right = right;
+}
+
+void set_node_parent(Node * parent)
+{
+	node_parent = parent;
+}
+
 Node * Store::create_node(int data)
 {
 	Node * node = new Node;
