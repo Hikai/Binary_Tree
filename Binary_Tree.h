@@ -20,10 +20,10 @@ public :
 	{
 
 	}
-	int get_node_data();
-	Node * get_node_left();
-	Node * get_node_right();
-	Node * get_node_parent();
+	int get_node_data(void);
+	Node * get_node_left(void);
+	Node * get_node_right(void);
+	Node * get_node_parent(void);
 	void set_node_data(int);
 	void set_node_left(Node *);
 	void set_node_right(Node *);
