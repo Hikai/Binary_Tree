@@ -1,5 +1,25 @@
 #include "Binary_Tree.h"
 
+int Node::get_node_data(void)
+{
+	return data;
+}
+
+Node * Node::get_node_left(void)
+{
+	return node_left;
+}
+
+Node * Node::get_node_right(void)
+{
+	return node_right;
+}
+
+Node * Node::get_node_parent(void)
+{
+	return node_parent;
+}
+
 Node * Store::create_node(int data)
 {
 	Node * node = new Node;
