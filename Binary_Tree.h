@@ -14,7 +14,10 @@ private :
 public :
 	Node()
 	{
-
+		set_node_data(NULL);
+		set_node_left(nullptr);
+		set_node_right(nullptr);
+		set_node_parent(nullptr);
 	}
 	~Node()
 	{
@@ -34,7 +37,6 @@ class Store {
 public:
 	Store()
 	{
-
 	}
 	~Store()
 	{
