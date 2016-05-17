@@ -21,7 +21,10 @@ public :
 	}
 	~Node()
 	{
-
+		set_node_data(NULL);
+		set_node_left(nullptr);
+		set_node_right(nullptr);
+		set_node_parent(nullptr);
 	}
 	int get_node_data(void);
 	Node * get_node_left(void);
