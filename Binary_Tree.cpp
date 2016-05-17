@@ -44,9 +44,6 @@ Node * Store::create_node(int data)
 {
 	Node * node = new Node;
 	node->data = data;
-	node->node_left = nullptr;
-	node->node_right = nullptr;
-	node->node_parent = nullptr;
 	return node;
 }
 
