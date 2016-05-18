@@ -65,3 +65,8 @@ void Store::separate_node(Node * node)
 	node->node_parent = nullptr;
 	Store::destroy_node(node);
 }
+
+void Store::destroy_node(Node * node)
+{
+	delete node;
+}
