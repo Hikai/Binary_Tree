@@ -47,7 +47,7 @@ Node * Store::create_node(int data)
 	return node;
 }
 
-void Store::inorder_traversal(Node * node_traversal)
+void Store::print_inorder_traversal(Node * node_traversal)
 {
 	if (node_traversal == nullptr) {
 		return;
