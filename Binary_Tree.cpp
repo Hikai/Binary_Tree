@@ -43,7 +43,7 @@ void set_node_parent(Node * parent)
 Node * Store::create_node(int data)
 {
 	Node * node = new Node;
-	node->data = data;
+	node->set_node_data(data);
 	return node;
 }
 
