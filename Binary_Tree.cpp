@@ -52,9 +52,9 @@ void Store::print_inorder_traversal(Node * node_traversal)
 	if (node_traversal == nullptr) {
 		return;
 	}
-	Store::inorder_traversal(node_traversal->node_left);
+	Store::print_inorder_traversal(node_traversal->node_left);
 	cout << node_traversal->data << ", ";
-	Store::inorder_traversal(node_traversal->node_right);
+	Store::print_inorder_traversal(node_traversal->node_right);
 }
 
 void Store::separate_node(Node * node)
