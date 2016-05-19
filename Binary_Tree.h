@@ -46,7 +46,7 @@ public:
 
 	}
 	Node * create_node(int);
-	void print_inorder_traversal_data(Node *);
+	void print_inorder_traversal(Node *);
 	void separate_node(Node *);
 	void destroy_node(Node *);
 };
