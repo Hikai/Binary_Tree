@@ -22,7 +22,7 @@ int main()
 	node_e->setnode_parent(node_a);
 	node_f->set_node_parent(node_e);
 	node_g->set_node_parent(node_e);
-	store->inorder_traversal(node_a);
+	store->print_inorder_traversal(node_a);
 	store->separate_node(node_g);
 	store->separate_node(node_f);
 	store->separate_node(node_e);
